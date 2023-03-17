@@ -1,0 +1,10 @@
+services:
+  simpleproject
+     image: sklalani/simpleproject:latest
+     networks:
+       - front-end
+
+networks:
+  front-end:
+      
+      

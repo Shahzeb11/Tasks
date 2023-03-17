@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: printnumbers
+  name: printnumbers
+spec:
+  type: NodePort
+  ports:
+  - name: "printnumbers-service"
+    port: 5000
+    targetPort: 80
+    nodePort: 31012
+  selector:
+    app: printnumbers
+
+

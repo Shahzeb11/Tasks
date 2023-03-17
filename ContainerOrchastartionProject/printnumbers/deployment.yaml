@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: printnumbers
+  name: printnumbers
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: printnumbers
+  template:
+    metadata:
+      labels:
+        app: printnumbers
+    spec:
+      containers:
+      - image: printnumbers:v1
+        name: printnumbers
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 80
+          name: printnumbers

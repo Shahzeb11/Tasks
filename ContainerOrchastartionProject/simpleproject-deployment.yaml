@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: simpleproject
+  name: simpleproject
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: simpleproject
+  template:
+    metadata:
+      labels:
+        app: simpleproject
+    spec:
+      containers:
+      - image: sklalani/simpleproject:latest
+        name: simpleproject
+        ports:
+        - containerPort: 80
+          name: simpleproject
